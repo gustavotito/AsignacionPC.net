@@ -31,7 +31,7 @@ namespace ServicioEquipo.Dominio
         public decimal Precio { get; set; }
 
         [DataMember]
-        public DateTime fecha { get; set; }
+        public DateTime Fecha { get; set; }
 
         [DataMember]
         public int IdArea { get; set; }

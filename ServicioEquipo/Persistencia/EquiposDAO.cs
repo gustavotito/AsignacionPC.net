@@ -36,7 +36,7 @@ namespace ServicioEquipo.Persistencia
                                 Marca = (string)resultado["marca"],
                                 IdArea = (int)resultado["id_area"],
                                 Precio = (decimal)resultado["precio"],
-                                fecha = (DateTime)resultado["fechregistro"],
+                                Fecha = (DateTime)resultado["fechregistro"],
                                 Estado = (string)resultado["estado"],
                                 
                             };
@@ -75,7 +75,7 @@ namespace ServicioEquipo.Persistencia
                                 Marca = (string)resultado["marca"],
                                 Area = (string)resultado["area"],
                                 Precio = (decimal)resultado["precio"],
-                                fecha = (DateTime)resultado["fechregistro"],
+                                Fecha = (DateTime)resultado["fechregistro"],
                                 Estado = (string)resultado["estado"]
 
                             };
