@@ -36,7 +36,7 @@ namespace ServicioEquipo.Persistencia
                                 Descripcion = (string)resultado["descripcion"],                           
                                 IdArea = (int)resultado["id_area"],
                                 FechaReg = (string)resultado["e_fech_registro"],
-                                Estado = (string)resultado["estado"]
+                                Estado = (string)resultado["estado"],
                                 
                             };
                             equiposEncontrado.Add(equipoEncontrado);
@@ -74,7 +74,7 @@ namespace ServicioEquipo.Persistencia
                                 Descripcion = (string)resultado["descripcion"],
                                 Area = (string)resultado["area"],
                                 FechaReg = (string)resultado["e_fech_registro"],
-                                Estado = (string)resultado["estado"],
+                                Estado = (string)resultado["estado"]
 
                             };
                         }
