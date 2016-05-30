@@ -30,7 +30,7 @@ namespace ServicioEquipo.Persistencia
                             equipoEncontrado = new Equipos()
                             {
 
-                                Id = (int)resultado["nro_serie"],
+                                Id = (string)resultado["nro_serie"],
                                 Tipo = (string)resultado["e_tipo"],
                                 Modelo = (string)resultado["e_modelo"],
                                 Descripcion = (string)resultado["descripcion"],                           
@@ -52,7 +52,7 @@ namespace ServicioEquipo.Persistencia
 
 
 
-        public Equipos ObtenerEquipos(int id)
+        public Equipos ObtenerEquipos(string id)
         {
             Equipos equipoEncontrado = null;
             string sql = "SELECT nro_serie,e_tipo,e_modelo,EQ.e_descripcion AS descripcion,e_fech_registro,AR.a_descripcion AS area,ES.e_descripcion AS estado from T_Equipos AS EQ INNER JOIN T_Estado AS ES ON EQ.id_estado=ES.id_estado INNER JOIN T_Area AS AR ON EQ.id_area = AR.id_area WHERE nro_serie=@id";
@@ -68,7 +68,7 @@ namespace ServicioEquipo.Persistencia
                         {
                             equipoEncontrado = new Equipos()
                             {
-                                Id = (int)resultado["nro_serie"],
+                                Id = (string)resultado["nro_serie"],
                                 Tipo = (string)resultado["e_tipo"],
                                 Modelo = (string)resultado["e_modelo"],
                                 Descripcion = (string)resultado["descripcion"],

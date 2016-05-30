@@ -16,7 +16,7 @@ namespace ServicioEquipo
         List<Equipos> ListarEquipos();
 
         [OperationContract]
-        Equipos ObtenerEquipos(int id);
+        Equipos ObtenerEquipos(string id);
 
     }
 }

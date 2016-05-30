@@ -20,7 +20,7 @@ namespace ServicioEquipo
         }
 
 
-        public Equipos ObtenerEquipos(int id)
+        public Equipos ObtenerEquipos(string id)
         {
             return equiposDAO.ObtenerEquipos(id);
         }

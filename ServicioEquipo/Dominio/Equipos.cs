@@ -10,7 +10,7 @@ namespace ServicioEquipo.Dominio
     public class Equipos
     {
         [DataMember]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         [DataMember]
         public string Tipo { get; set; }        
