@@ -13,25 +13,22 @@ namespace ServicioEquipo.Dominio
         public int Id { get; set; }
 
         [DataMember]
-        public string Nombre { get; set; }
+        public string Tipo { get; set; }        
+
+        [DataMember]
+        public string Modelo { get; set; }
 
         [DataMember]
         public string Descripcion { get; set; }
 
         [DataMember]
-        public string Marca { get; set; }
-
-        [DataMember]
         public string Area { get; set; }
 
         [DataMember]
-        public string Estado { get; set; }
+        public string Estado { get; set; }       
 
         [DataMember]
-        public decimal Precio { get; set; }
-
-        [DataMember]
-        public DateTime Fecha { get; set; }
+        public string FechaReg { get; set; }
 
         [DataMember]
         public int IdArea { get; set; }

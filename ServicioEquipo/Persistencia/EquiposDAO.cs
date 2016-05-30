@@ -16,7 +16,7 @@ namespace ServicioEquipo.Persistencia
         {
             List<Equipos> equiposEncontrado = new List<Equipos>();
             Equipos equipoEncontrado = null;
-            string sql = "SELECT id_equipo,nombre, EQ.descripcion AS detalle,marca,id_area,precio,fechregistro,ES.descripcion AS estado FROM Equipos  AS EQ INNER JOIN Estado AS ES ON EQ.id_estado=ES.id_estado";
+            string sql = "SELECT nro_serie,e_tipo,e_modelo,EQ.e_descripcion AS descripcion,e_fech_registro,id_area,ES.e_descripcion AS estado from T_Equipos AS EQ INNER JOIN T_Estado AS ES ON EQ.id_estado=ES.id_estado";
             using (SqlConnection conexion = new SqlConnection(CadenaConexion))
             {
                 conexion.Open();
@@ -30,14 +30,13 @@ namespace ServicioEquipo.Persistencia
                             equipoEncontrado = new Equipos()
                             {
 
-                                Id = (int)resultado["id_equipo"],
-                                Nombre = (string)resultado["nombre"],
-                                Descripcion = (string)resultado["detalle"],
-                                Marca = (string)resultado["marca"],
+                                Id = (int)resultado["nro_serie"],
+                                Tipo = (string)resultado["e_tipo"],
+                                Modelo = (string)resultado["e_modelo"],
+                                Descripcion = (string)resultado["descripcion"],                           
                                 IdArea = (int)resultado["id_area"],
-                                Precio = (decimal)resultado["precio"],
-                                Fecha = (DateTime)resultado["fechregistro"],
-                                Estado = (string)resultado["estado"],
+                                FechaReg = (string)resultado["e_fech_registro"],
+                                Estado = (string)resultado["estado"]
                                 
                             };
                             equiposEncontrado.Add(equipoEncontrado);
@@ -56,7 +55,7 @@ namespace ServicioEquipo.Persistencia
         public Equipos ObtenerEquipos(int id)
         {
             Equipos equipoEncontrado = null;
-            string sql = "SELECT id_equipo,nombre, EQ.descripcion AS detalle,marca,AR.descripcion AS area,precio,fechregistro,ES.descripcion AS estado FROM Equipos  AS EQ INNER JOIN Estado AS  ES ON EQ.id_estado=ES.id_estado INNER JOIN Area AS AR ON EQ.id_area = AR.id_area WHERE id_equipo=@id";
+            string sql = "SELECT nro_serie,e_tipo,e_modelo,EQ.e_descripcion AS descripcion,e_fech_registro,AR.a_descripcion AS area,ES.e_descripcion AS estado from T_Equipos AS EQ INNER JOIN T_Estado AS ES ON EQ.id_estado=ES.id_estado INNER JOIN T_Area AS AR ON EQ.id_area = AR.id_area WHERE nro_serie=@id";
             using (SqlConnection conexion = new SqlConnection(CadenaConexion))
             {
                 conexion.Open();
@@ -69,14 +68,13 @@ namespace ServicioEquipo.Persistencia
                         {
                             equipoEncontrado = new Equipos()
                             {
-                                Id = (int)resultado["id_equipo"],
-                                Nombre = (string)resultado["nombre"],
-                                Descripcion = (string)resultado["detalle"],
-                                Marca = (string)resultado["marca"],
+                                Id = (int)resultado["nro_serie"],
+                                Tipo = (string)resultado["e_tipo"],
+                                Modelo = (string)resultado["e_modelo"],
+                                Descripcion = (string)resultado["descripcion"],
                                 Area = (string)resultado["area"],
-                                Precio = (decimal)resultado["precio"],
-                                Fecha = (DateTime)resultado["fechregistro"],
-                                Estado = (string)resultado["estado"]
+                                FechaReg = (string)resultado["e_fech_registro"],
+                                Estado = (string)resultado["estado"],
 
                             };
                         }
